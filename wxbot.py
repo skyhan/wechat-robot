@@ -9,6 +9,8 @@ import urllib
 import time, re, sys, os, random
 import subprocess
 
+import msgparser
+
 
 QRImagePath = os.path.join(os.getcwd(), 'qrcode.jpg')
 
@@ -405,6 +407,9 @@ class WXBot:
                     print '[Group] |%s| %s: %s' % (group, name, content.replace('<br/>','\n'))
                 else:
                     print '[Text] ', name, ' : ', content
+                    # parse message here
+                    parse_msg(name, content)
+
                     if self.is_auto_reply:
                         ans = self.auto_reply(content)
                         if ans:
