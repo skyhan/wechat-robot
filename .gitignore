@@ -1,5 +1,5 @@
 *.jpg
-
+.idea
 .DS_Store
 *.ini
 *.pyc
